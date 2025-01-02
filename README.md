@@ -1,2 +1,2 @@
 # CSES-solutions
-Solutions of CSES
+Solutions of CSES Problemset by Shivam Singh Parihar (IIIT Allahabad)
