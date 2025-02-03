@@ -90,7 +90,7 @@ void func(){
         }
         else{
             int s; cin >> s;
-            //find the range which contains subtree of s
+            //find the range of indices which contains subtree of s
             int l = ind[s];
             int r = l + (out[s] - in[s]) / 2;
             cout << query(1, 0, n-1, l, r) << endl;
