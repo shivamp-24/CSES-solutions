@@ -70,7 +70,7 @@ void func(){
     dfs(1, -1, timer, in, out, arr, val, adj);
 
     vector<int> ind(n+1); //to find a particular node is at what index in arr
-    // used when we need to reach the node at which "update" is to be done or find the range of indices for a node...
+    // used when we need to reach the node at which "update" is to be done or find the range of indices for which it contains its subtree nodes...
     for(int i=0; i<n; i++){
         ind[arr[i]] = i;
     }
@@ -90,7 +90,7 @@ void func(){
         }
         else{
             int s; cin >> s;
-            //find the range which contains subtree of s
+            //find the range of indices which contains subtree of s
             int l = ind[s];
             int r = l + (out[s] - in[s]) / 2;
             cout << query(1, 0, n-1, l, r) << endl;
