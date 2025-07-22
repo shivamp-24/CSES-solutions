@@ -9,7 +9,6 @@ int findKthParent(int x, int k, vector<vector<int>> &parents, int maxi){
     for(int i=0; i<=maxi; i++){
         if((k >> i) & 1){
             x = parents[i][x];
-            if(x == -1) return x;
         }
     }
     return x;
@@ -20,7 +19,7 @@ void func() {
     //use binary lifting approach similar to trees
     //maxi is log2(1e9) = 30 as k can be upto 1e9
     int maxi = 30;
-    vector<vector<int>> parents(maxi + 1, vector<int>(n+1, -1));
+    vector<vector<int>> parents(maxi + 1, vector<int>(n+1));
     for(int i=1; i<=n; i++){
         int x; cin >> x;
         parents[0][i] = x;
@@ -30,9 +29,7 @@ void func() {
     for(int i=1; i<=maxi; i++){
         for(int node=1; node<=n; node++){
             int intermediate = parents[i-1][node];
-            if(intermediate != -1){
-                parents[i][node] = parents[i-1][intermediate];
-            }
+            parents[i][node] = parents[i-1][intermediate];
         }
     }
 

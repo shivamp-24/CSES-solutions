@@ -13,7 +13,7 @@ void func(){
         adj[u].push_back({v, w});
     }
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
-    vector<int> dist(n+1, 1e18), vis(n+1, 0);
+    vector<int> dist(n+1, 1e18);
     pq.push({0, 1});
     dist[1] = 0;
     while(!pq.empty()){
@@ -21,8 +21,7 @@ void func(){
         pq.pop();
         int cd = it.first;
         int u = it.second;
-        if(vis[u] == 1) continue;
-        vis[u] = 1;
+        if(cd > dist[u]) continue;
         for(auto &it: adj[u]){
             int v = it.first, wt = it.second;
             if((cd + wt) < dist[v]){

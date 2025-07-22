@@ -14,7 +14,6 @@ void printPath(pair<int, int> &cycle, vector<int> &parent){
         curr = parent[curr];
     }
     path.push_back(start);
-    reverse(path.begin(), path.end());
     cout << path.size() << endl;
     for(auto &it: path) cout << it << " ";
     cout << endl;
