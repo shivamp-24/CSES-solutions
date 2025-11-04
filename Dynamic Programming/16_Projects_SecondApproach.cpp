@@ -17,7 +17,7 @@ void func() {
     for(int i=0; i<n; i++) {
         //find the next non-overlapping slot for arr[i]
         int low = i + 1, high = n - 1, mid, ind = n;
-        while(low <= high) {
+        while(low <= high) {>
             mid = (low + high) >> 1;
             if(arr[mid][0] > arr[i][1]) {
                 ind = mid;
